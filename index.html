@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<html data-theme="cupcake"></html>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <!-- main container -->
+        <div class="flex flex-col lg:flex-row gap-6 mx-12 my-12">
+            <!-- shape container -->
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- first card triangle -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="./images/triangle.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Triangle</h2>
+                      <p>Area (A) = 0.5 X b X h</p>
+                      <p>
+                        <input type="number" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="base" name="" id="triangle-base">
+                        <span class="ml-3  mr-3 text-base">cm</span>
+                        <!-- height base -->
+                        <input type="number" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="height" name="" id="height-base">
+                        <span class="ml-3 text-base">cm</span>
+                      </p>
+                      <p class="text-2xl font-semibold">Area: <span  id="triangle-area" class="font-semibold">0</span> cm<sup>2</sup></p>
+                      
+                    </div>
+                    <div class="mx-10 mb-12">
+                        <button onclick="calculateTriangleArea()" class="text-white py-4 text-xl font-bold bg-[#1090D8] w-full rounded-lg"bg-[#1090D8] w-[350] rounded-lg">Calculate</button>
+                      </div>
+                  </div>
+                  
+                <!-- second card rectangle -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="./images/rectangle.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Recangle</h2>
+                      <p>Area (A) = w X l</p>
+                      <p>
+                        <input type="text" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="width" name="" id="rectangle-width">
+                        <span class="ml-3  mr-3 text-base">cm</span>
+                        <!-- height length -->
+                        <input type="text" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="length" name="" id="rectangle-length">
+                        <span class="ml-3 text-base">cm</span>
+                      </p>
+                      <p class="text-2xl font-semibold">Area: <span  id="rectangle-area" class="font-semibold">0</span> cm<sup>2</sup></p>
+                      
+                    </div>
+                    <div class="mx-10 mb-12">
+                        <button onclick="calculateRectangleArea()" class="text-white py-4 text-xl font-bold bg-[#1090D8] w-full rounded-lg"bg-[#1090D8] w-[350] rounded-lg">Calculate</button>
+                      </div>
+                  </div>
+                <!-- third card parallelogram card-->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="./images/parallelogram.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Parallelogram</h2>
+                      <p>Area (A) = b X h</p>
+                      <p>
+                        <input type="text" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="base" name="" id="parallelogram-base">
+                        <span class="ml-3  mr-3 text-base">cm</span>
+                        <!-- height -->
+                        <input type="text" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="height" name="" id="parallelogram-height">
+                        <span class="ml-3 text-base">cm</span>
+                      </p>
+                      <p class="text-2xl font-semibold">Area: <span  id="parallelogram-area" class="font-semibold">0</span> cm<sup>2</sup></p>
+                      
+                    </div>
+                    <div class="mx-10 mb-12">
+                        <button onclick="calculateParallelogramArea()" class="text-white py-4 text-xl font-bold bg-[#1090D8] w-full rounded-lg"bg-[#1090D8] w-[350] rounded-lg">Calculate</button>
+                      </div>
+                  </div>
+
+                   <!-- fourth card ellipse card-->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                  <figure class="px-10 pt-10">
+                    <img src="./images/ellipse.png" alt="Shoes" class="rounded-xl" />
+                  </figure>
+                  <div class="card-body items-center text-center">
+                    <h2 class="card-title">Ellipse</h2>
+                    <p>Area (A) = 𝝅 ab</p>
+                    <p>
+                      <input type="text" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="a" name="" id="ellipse-a">
+                      <span class="ml-3  mr-3 text-base">cm</span>
+                      <!-- height -->
+                      <input type="text" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="b" name="" id="ellipse-b">
+                      <span class="ml-3 text-base">cm</span>
+                    </p>
+                    <p class="text-2xl font-semibold">Area: <span  id="ellipse-area" class="font-semibold">0</span> cm<sup>2</sup></p>
+                    
+                  </div>
+                  <div class="mx-10 mb-12">
+                      <button onclick="calculateEllipseArea()" class="text-white py-4 text-xl font-bold bg-[#1090D8] w-full rounded-lg"bg-[#1090D8] w-[350] rounded-lg">Calculate</button>
+                    </div>
+                </div>
+
+                  <!-- fifth rhombus card ellipse card-->
+                  <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="./images/rhombus.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Ellipse</h2>
+                      <p>Area (A) = 0.5 X d1 X d2</p>
+                      <p>
+                        <input type="text" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="d1" name="" id="rhombus-d1">
+                        <span class="ml-3  mr-3 text-base">cm</span>
+                        <!-- height -->
+                        <input type="text" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="d2" name="" id="rhombus-d2">
+                        <span class="ml-3 text-base">cm</span>
+                      </p>
+                      <p class="text-2xl font-semibold">Area: <span  id="rhombus-area" class="font-semibold">0</span> cm<sup>2</sup></p>
+                      
+                    </div>
+                    <div class="mx-10 mb-12">
+                        <button onclick="calculateRhombusArea()" class="text-white py-4 text-xl font-bold bg-[#1090D8] w-full rounded-lg"bg-[#1090D8] w-[350] rounded-lg">Calculate</button>
+                      </div>
+                  </div>
+
+                   <!-- sixth pentagon card ellipse card-->
+                   <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="./images/pentagon.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Pentagon</h2>
+                      <p>Area (A) = 0.5 X p X b</p>
+                      <p>
+                        <input type="text" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="p" name="" id="pentagon-p">
+                        <span class="ml-3  mr-3 text-base">cm</span>
+                        <!-- height -->
+                        <input type="text" class="w-20 bg-[#F1F1F1] border border-black px-2 py-1 text-base" placeholder="b" name="" id="pentagon-b">
+                        <span class="ml-3 text-base">cm</span>
+                      </p>
+                      <p class="text-2xl font-semibold">Area: <span  id="pentagon-area" class="font-semibold">0</span> cm<sup>2</sup></p>
+                      
+                    </div>
+                    <div class="mx-10 mb-12">
+                        <button onclick="calculatePentagonArea()" class="text-white py-4 text-xl font-bold bg-[#1090D8] w-full rounded-lg"bg-[#1090D8] w-[350] rounded-lg">Calculate</button>
+                      </div>
+                  </div>
+                  
+
+                  
+
+
+            </div>
+            <!-- area calculator -->
+            <!-- <div class="w-[400px]">
+                <h1 class="text-4xl">Area calculator</h1>
+            </div> -->
+            <!-- fkf -->
+            <div class="card w-96 bg-base-100 shadow-xl h-[545px]  items-center text-center">
+              <h1 class="text-4xl items-center text-center">Area calculator</h1>
+              <div id="calculation-entry"></div>
+            </div>
+            <!-- dfkfj -->
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/area-calculator.js"></script>
+</body>
+</html>
